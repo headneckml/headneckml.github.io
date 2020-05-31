@@ -84,9 +84,7 @@
           <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="/" class="nav-link">About</a></li>
           <li class="nav-item"><a href="/" class="nav-link">Services</a></li>
-
-          <li class="nav-item"><a href="/" class="nav-link">Case Studies</a></li>
-          <li class="nav-item cta"><a href="/" class="nav-link"><span>Try it out!</span></a></li>
+          <li class="nav-item cta"><a href="/" class="nav-link"><span>TM Classifier</span></a></li>
         </ul>
       </div>
     </div>
@@ -109,19 +107,24 @@
                   <p>
                     <img src="images/model_explainer_cerumen.png" alt="" class="img-fluid">
                   </p>
-                  <h2 class="mb-3">#1. Tympanic Membrane Abnormality Classifier</h2>
+                  <h2 class="mb-3">Tympanic Membrane Abnormality Classifier</h2>
                   <p>We created an original tympanic membrane (TM) image database consisting of a total of 400 images by
-                    utilizing publicly available online databases and images.
-                    Specifically, we selected appropriate images from the Van Akdamar Hospital eardrum database and
-                    individual images from Google Images (Google Inc., Mountain View, CA)
-                    queried using the terms “tympanic membrane,” “otoscopic image,” “normal,” “acute otitis media,”
-                    “otitis externa,” and “chronic suppurative otitis media.”
-                    The database was bipartitely organized into normal (196) and abnormal (204) classes. </p>
+                    utilizing publicly available online databases and images. The database contained images representing 
+                    five different pathologies: normal, acute otitis media, otitis externa, chronic suppurative otitis media, 
+                    and cerumen. The classifier was consctucted based on a deep learning algorithm. It is capable of 
+                    binary classification <strong>(normal vs. abnormal)</strong> and multiclass classification <strong>(Normal, AOM, CSOM, Cerumen, OE)</strong></p>
 
-                  <h2 class="mb-3">#2. Try some of the images below. Download the images and test our.</h2>
+                  <h2 class="mb-3">Try some of the images below.</h2> 
+                  <p>Download the images below and drag them to the dropzone to test our TM classifier.</p>
                   <p>
-                    <a download="test-image.jpg" href="images/100_0095.png">
-                      <img src="images/100_0095.png" alt="" class="img-fluid" style="max-width: 224px; max-height: 224px;">
+                    <a download="Cerumen_test_image.jpg" href="images/Cerumen_test1.png">
+                      <img src="images/Cerumen_test1.png" alt="" class="img-fluid" style="max-width: 100px; max-height: 100px;">
+                    </a>
+                    <a download="AOM_test_image.jpg" href="images/AOM_test1.png">
+                      <img src="images/AOM_test1.png" alt="" class="img-fluid" style="max-width: 100px; max-height: 100px;">
+                    </a>
+                    <a download="Normal_test_image.jpg" href="images/Normal_test1.png">
+                      <img src="images/Normal_test1.png" alt="" class="img-fluid" style="max-width: 100px; max-height: 100px;">
                     </a>
                     
                   </p>
@@ -131,7 +134,7 @@
             </div>
           </section> <!-- .section -->
         </div>
-        <div class="col-lg-7 col-md-10 col-sm-10 ftco-section ftco-animate text-center" style="padding-left: 2em;padding-right: 2em;">
+        <div class="col-lg-7 col-md-10 col-sm-10 ftco-section ftco-animate  justify-content-center" style="padding-left: 2em;padding-right: 2em;">
           <h1 class="mb-4">Use the
             <strong>dropzone</strong> to try our model</h1>
 
@@ -184,14 +187,14 @@
 
           <br>
 
-          <div id="dropzone-preview" class="dropzone-previews dropzone div-table" style="color:#222225">
+          <div id="dropzone-preview" class="dropzone-previews dropzone div-table justify-content-center" style="color:#222225">
             <div class="div-tr">
               <div class="div-th">Image Info</div>
               <div class="div-th">Image Preview</div>
-              <div class="div-th">Classification Label</div>
-              <div class="div-th">Class probabilities <br> (Normal, Abnormal)</div>
-              <div class="div-th">Multi Classification Label</div>
-              <div class="div-th">Multi Class probabilities <br> (Normal, AOM, CSOM, Cerumen, OE)</div>
+              <div class="div-th">Binary Classification</div>
+              <div class="div-th">Binary Class probabilities</div>
+              <div class="div-th">Multi Classification</div>
+              <div class="div-th">Multi Class probabilities</div>
               <div class="div-th">-</div>
             </div>
           </div>
