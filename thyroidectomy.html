@@ -104,18 +104,18 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-8">
-                  <form>
+                  <form method="post" id="input_surgcomp">
                     <div class="form-group">
                       <label for="sex">Sex</label>
-                      <select class="form-control" id="sex">
-                        <option>female</option>
-                        <option>male</option>
-                        <option>N/A</option>
+                      <select class="form-control"  name="sex" id="sex">
+                        <option value="1.0">female</option>
+                        <option value="0.0">male</option>
+                        <option value="2.0">N/A</option>
                       </select>
                     </div>
                     <div class="form-group">
                       <label for="race_new">Race</label>
-                      <select class="form-control" id="race_new">
+                      <select class="form-control" name="race_new" id="race_new">
                         <option>American Indian or Alaska Native</option>
                         <option>Asian</option>
                         <option>Black or African American</option>
@@ -127,7 +127,7 @@
 
                     <div class="form-group">
                       <label for="inout">InOut</label>
-                      <select class="form-control" id="inout">
+                      <select class="form-control" name="inout" id="inout">
                         <option>Inpatient</option>
                         <option>Outpatient</option>
                       </select>
@@ -135,7 +135,7 @@
 
                     <div class="form-group">
                       <label for="transt">Transt</label>
-                      <select class="form-control" id="transt">
+                      <select class="form-control" name="transt" id="transt">
                         <option>Admitted directly from home</option>
                         <option>Chronic Care Facility</option>
                         <option>Not transferred (admitted from home)</option>
@@ -153,14 +153,14 @@
                     
                     <div class="form-group">
                       <label for="anesthes">Anesthesia</label>
-                      <select class="form-control" id="anesthes">
+                      <select class="form-control" name="anesthes" id="anesthes">
                         <option>General</option>
                       </select>
                     </div>
 
                     <div class="form-group">
                       <label for="surgspec">Surgeon Speciality</label>
-                      <select class="form-control" id="surgspec">
+                      <select class="form-control" name="surgspec" id="surgspec">
                         <option>Cardiac Surgery</option>
                         <option>General Surgery</option>
                         <option>Gynecology</option>
@@ -177,7 +177,7 @@
 
                     <div class="form-group">
                       <label for="electsurg">Electsurg</label>
-                      <select class="form-control" id="electsurg">
+                      <select class="form-control" name="electsurg" id="electsurg">
                         <option>Yes</option>
                         <option>No</option>
                         <option>N/A</option>
@@ -186,7 +186,7 @@
     
                     <div class="form-group">
                       <label for="diabetes">Diabetes</label>
-                      <select class="form-control" id="diabetes">
+                      <select class="form-control" name="diabetes" id="diabetes">
                         <option>No</option>
                         <option>Insulin</option>
                         <option>Non-Insulin</option>
@@ -196,7 +196,7 @@
 
                     <div class="form-group">
                       <label for="smoke">Smoke</label>
-                      <select class="form-control" id="smoke">
+                      <select class="form-control" name="smoke" id="smoke">
                         <option>Yes</option>
                         <option>No</option>
                       </select>
@@ -205,7 +205,7 @@
 
                     <div class="form-group">
                       <label for="dyspnea">Dyspnea</label>
-                      <select class="form-control" id="dyspnea">
+                      <select class="form-control" name="dyspnea" id="dyspnea">
                         <option>AT REST</option>
                         <option>MODERATE EXERTION</option>
                         <option>No</option>
@@ -214,7 +214,7 @@
 
                     <div class="form-group">
                       <label for="fnstatus2">FNStatus</label>
-                      <select class="form-control" id="fnstatus2">
+                      <select class="form-control" name="fnstatus2" id="fnstatus2">
                         <option>Independent</option>
                         <option>Partially Dependent</option>
                         <option>Totally Dependent</option>
@@ -224,7 +224,7 @@
 
                     <div class="form-group">
                       <label for="ventilat">Ventilat</label>
-                      <select class="form-control" id="ventilat">
+                      <select class="form-control" name="ventilat" id="ventilat">
                         <option>Yes</option>
                         <option>No</option>
                       </select>
@@ -232,7 +232,7 @@
 
                     <div class="form-group">
                       <label for="hypermed">Hypermed</label>
-                      <select class="form-control" id="hypermed">
+                      <select class="form-control" name="hypermed" id="hypermed">
                         <option>Yes</option>
                         <option>No</option>
                       </select>
@@ -240,7 +240,7 @@
 
                     <div class="form-group">
                       <label for="emergency">Emergency</label>
-                      <select class="form-control" id="emergency">
+                      <select class="form-control" name="emergency" id="emergency">
                         <option>Yes</option>
                         <option>No</option>
                       </select>
@@ -248,7 +248,7 @@
 
                     <div class="form-group">
                       <label for="wndclas">Wound Class</label>
-                      <select class="form-control" id="wndclas">
+                      <select class="form-control" name="wndclas" id="wndclas">
                         <option>1-Clean</option>
                         <option>2-Clean/Contaminated</option>
                         <option>3-Contaminated</option>
@@ -258,7 +258,7 @@
 
                     <div class="form-group">
                       <label for="asaclas">ASA Class</label>
-                      <select class="form-control" id="asaclas">
+                      <select class="form-control" name="asaclas" id="asaclas">
                         <option>1-No Disturb</option>
                         <option>2-Mild Disturb</option>
                         <option>3-Severe Disturb</option>
@@ -273,30 +273,31 @@
     
                     <div class="form-group">
                       <label for="cpt">CPT</label>
-                      <input type="number" class="form-control" id="cpt" placeholder="CPT">
+                      <input type="number" class="form-control" name="cpt" id="cpt" placeholder="CPT">
                     </div>
                     <div class="form-group">
                       <label for="age">Age</label>
-                      <input type="number" class="form-control" id="age" placeholder="Age">
+                      <input type="number" class="form-control" name="age" id="age" placeholder="Age">
                     </div>
 
                     <div class="form-group">
                       <label for="htooday">HTOODAY</label>
-                      <input type="number" class="form-control" id="htooday" placeholder="HTOODAY">
+                      <input type="number" class="form-control" name="htooday" id="htooday" placeholder="HTOODAY">
                     </div>
 
                     <div class="form-group">
                       <label for="height">Height</label>
-                      <input type="number" class="form-control" id="height" placeholder="Height">
+                      <input type="number" class="form-control" name="height" id="height" placeholder="Height">
                     </div>
 
                     <div class="form-group">
                       <label for="weight">Weight</label>
-                      <input type="number" class="form-control" id="weight" placeholder="Weight">
+                      <input type="number" class="form-control" id="weight" name="weight" placeholder="Weight">
                     </div>
-    
-                    <button type="submit" class="btn btn-primary">Get Predictions</button>
+
+                    
                   </form>
+                  <button class="btn btn-primary get-preds">Get Predictions</button>
                 </div>
                 <div class="col-md-4">
                   Results:
@@ -401,6 +402,16 @@
     Dropzone.autoDiscover = false;
     var LABELS = ["No Surgical Complications", "Positive Surgical Complications"];
     $(document).ready(() => {
+
+      $('.get-preds').on('click', () => {
+
+        var data = $('#input_surgcomp').serializeArray().reduce(function(obj, item) {
+            obj[item.name] = item.value;
+            return obj;
+        }, {});
+
+        console.log(data);
+      });
 
       function predictModel(inputData){
         const probs_surg_comp = model_surg_comp.predict(inputData);
