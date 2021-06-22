@@ -541,9 +541,9 @@
       var hot = new Handsontable(hotElement, hotSettings);
 
       document.getElementById("export-csv").addEventListener("click", function (event) { hot.getPlugin("exportFile").downloadFile("csv", { filename: "CSV Export " }); })
-      document.body.addEventListener('touchend', function (event) {
-        Handsontable.hooks.run(hot, 'afterSelectionEnd');
-      });
+      // document.body.addEventListener('touchend', function (event) {
+      //   Handsontable.hooks.run(hot, 'afterSelectionEnd');
+      // });
 
     });
   </script>
