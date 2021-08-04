@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>TympClass Classifier</title>
+  <title>Thyroidectomy Classifier</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -45,7 +45,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light" id="ftco-navbar">
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="/">HeadNeckML.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
@@ -56,9 +56,11 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="/" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="/" class="nav-link">Services</a></li>
-          <li class="nav-item cta"><a href="/" class="nav-link"><span>TM Classifier</span></a></li>
+          <!-- <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Services</a></li> -->
+          <li class="nav-item"><a href="/tympanic.html" class="nav-link"><span>TM Classifier</span></a></li>
+          <li class="nav-item cta"><a href="/thyroidectomy.html" class="nav-link"><span>Thyroidectomy
+                Classifier</span></a></li>
         </ul>
       </div>
     </div>
@@ -71,75 +73,87 @@
     <div id="particles-js" style="position: fixed;"></div>
     <br>
     <div class="container">
-      <div class="row justify-content-center" style="top: 150px;">
+      <div class="row justify-content-center">
         <div class="col-md-12">
           <section class="ftco-section ftco-degree-bg" style="background-color: #eaeff0; padding: 2em; color: #000000;">
             <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="accordion" id="accordionPanelsStayOpenExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                          aria-controls="panelsStayOpen-collapseTwo">
-                          Spreadsheet Input
-                        </button>
-                      </h2>
-                      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse show"
-                        aria-labelledby="panelsStayOpen-headingTwo">
-                        <div class="accordion-body">
-                          <div>
-                            <button id="add-row">+ Add Row</button>
-                            <button id="file-load-trigger">Open File</button>
-                            <button id="download-csv">Download CSV</button>
-                            <button id="download-json">Download JSON</button>
-                            <button id="clear-table">Clear Table</button>
-                          </div>
-                          <div id="input-table"></div>
 
-
-                          <button class="btn btn-primary get-preds">Get Predictions</button>
-                        </div>
-                        <div>
-                          Results will be added to the table in the columns 'Med_comp_pred', 'Surg_comp_pred', and 'Reop_pred'. 1 indicates a positive outcome, e.g. Med_comp_pred = 1 means that model has predicted medical complications.
-                        </div>
+              <h2>Single Patient Predictions:</h2>
+              <br/>
+              <div class="accordion">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne">
+                      Single Patient Input Form
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                      <form id='testform'></form>
+                      <div>Results: <div id='form-results'></div>
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">
-                        Form Submission
-                      </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
-                      aria-labelledby="panelsStayOpen-headingOne">
-                      <div class="accordion-body">
-                        <form id='testform'></form>
-                        <div>Results: <div id='form-results'></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
-
-
-
-
-
-
-
 
               </div>
 
+              <br/>
+              <hr>
+              
+              <br/>
+              <h2> Multipatient Predictions: </h2>
+              <br/>
+              
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                    aria-controls="panelsStayOpen-collapseTwo">
+                    Multipatient Spreadsheet Input
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse show"
+                  aria-labelledby="panelsStayOpen-headingTwo">
+                  <div class="accordion-body">
+                    <div>
+                      <button id="add-row">+ Add Row</button>
+                      <button id="file-load-trigger">Open File</button>
+                      <button id="download-csv">Download CSV</button>
+                      <button id="download-json">Download JSON</button>
+                      <button id="clear-table">Clear Table</button>
+                    </div>
+                    <div id="input-table"></div>
+
+
+                    <button class="btn btn-primary get-preds">Get Predictions</button>
+                  </div>
+                  <div>
+                    Results will be added to the table in the columns 'Med_comp_pred', 'Surg_comp_pred', and
+                    'Reop_pred'. 1 indicates a positive outcome, e.g. Med_comp_pred = 1 means that model has
+                    predicted medical complications.
+                  </div>
+                </div>
+              </div>
+
+
+
             </div>
-          </section> <!-- .section -->
+
+
+
+
+
+
+
+
         </div>
+
       </div>
+      </section> <!-- .section -->
     </div>
 
 
@@ -202,6 +216,44 @@
       $('#testform').jsonForm({
         // "Reop": { "title": "Reop", "type": "number" }, "Surg_comp": { "title": "Surg_comp", "type": "number" }, "Med_comp": { "title": "Med_comp", "type": "number" }
         "schema": { "SEX": { "title": "SEX", "type": "string", "enum": ["female", "male", "unknown"] }, "RACE_NEW": { "title": "RACE_NEW", "type": "string", "enum": ["american indian or alaska native", "asian", "black or african american", "native hawaiian or pacific islander", "unknown", "white"] }, "CPT": { "title": "CPT", "type": "string", "enum": ["60200", "60210", "60212", "60220", "60225", "60240", "60252", "60254", "60260", "60270", "60271"] }, "INOUT": { "title": "INOUT", "type": "string", "enum": ["inpatient", "outpatient"] }, "TRANST": { "title": "TRANST", "type": "string", "enum": ["acute care hospital", "admitted directly from home", "chronic care facility", "from acute care hospital inpatient", "not transferred (admitted from home)", "nursing home - chronic care - intermediate care", "other", "outside emergency department", "transfer from other", "unknown"] }, "ANESTHES": { "title": "ANESTHES", "type": "string", "enum": ["general"] }, "SURGSPEC": { "title": "SURGSPEC", "type": "string", "enum": ["cardiac surgery", "general surgery", "gynecology", "neurosurgery", "orthopedics", "otolaryngology (ent)", "plastics", "thoracic", "urology", "vascular"] }, "ELECTSURG": { "title": "ELECTSURG", "type": "string", "enum": ["no", "unknown", "yes"] }, "DIABETES": { "title": "DIABETES", "type": "string", "enum": ["insulin", "no", "non-insulin", "oral"] }, "SMOKE": { "title": "SMOKE", "type": "string", "enum": ["no", "yes"] }, "DYSPNEA": { "title": "DYSPNEA", "type": "string", "enum": ["at rest", "moderate exertion", "no"] }, "FNSTATUS2": { "title": "FNSTATUS2", "type": "string", "enum": ["independent", "partially dependent", "totally dependent", "unknown"] }, "VENTILAT": { "title": "VENTILAT", "type": "string", "enum": ["no", "yes"] }, "HYPERMED": { "title": "HYPERMED", "type": "string", "enum": ["no", "yes"] }, "EMERGNCY": { "title": "EMERGNCY", "type": "string", "enum": ["no", "yes"] }, "WNDCLAS": { "title": "WNDCLAS", "type": "string", "enum": ["1-clean", "2-clean/contaminated", "3-contaminated", "4-dirty/infected"] }, "ASACLAS": { "title": "ASACLAS", "type": "string", "enum": ["1-no disturb", "2-mild disturb", "3-severe disturb", "4-life threat", "5-moribund", "none assigned", "unknown"] }, "AGE": { "title": "AGE", "type": "number" }, "HTOODAY": { "title": "HTOODAY", "type": "number" }, "HEIGHT": { "title": "HEIGHT", "type": "number" }, "WEIGHT": { "title": "WEIGHT", "type": "number" } },
+        "form": [
+          {
+            name: "Section0",
+            id: "section0",
+            type: "section",
+            items: ["SEX", 'AGE', "HEIGHT", "WEIGHT",  "RACE_NEW", 'DIABETES',"SMOKE"]
+          },
+          // {
+          //   name: "Section1",
+          //   id: "section1",
+          //   type: "section",
+          //   items: [  ]
+          // },
+          {
+            name: "Section2",
+            id: "section2",
+            type: "section",
+            items: ['DYSPNEA', 'FNSTATUS2',"TRANST", "ELECTSURG", "CPT", 'HTOODAY' ],
+          },
+
+          {
+            name: "Section3",
+            id: "section3",
+            type: "section",
+            items: ['EMERGNCY', "INOUT", "ANESTHES", "SURGSPEC"]
+          },
+          {
+            name: "Section4",
+            id: "section4",
+            type: "section",
+            items: ['VENTILAT', 'HYPERMED', 'WNDCLAS', 'ASACLAS']
+          },
+          {
+            type: 'submit',
+            title: 'Click here to get predictions!'
+          }
+
+        ],
         "onSubmit": function (errors, values) {
           // console.log(values);
 
@@ -229,6 +281,15 @@
         },
       });
 
+      $("#section0").addClass("row");
+
+      $("#section1").addClass("row");
+      $("#section2").addClass("row");
+      $("#section3").addClass("row");
+      $("#section4").addClass("row");
+
+      $(".form-group").addClass("col-md-3");
+
 
 
       var tabledata = [{ "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "insulin", "SMOKE": "no", "DYSPNEA": "moderate exertion", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 61.0, "HTOODAY": 0.0, "HEIGHT": 66.0, "WEIGHT": 201.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 0 }, { "SEX": "female", "RACE_NEW": "asian", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "unknown", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "1-no disturb", "AGE": 21.0, "HTOODAY": 0.0, "HEIGHT": 64.0, "WEIGHT": 124.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 1 }, { "SEX": "male", "RACE_NEW": "white", "CPT": "60252", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "1-no disturb", "AGE": 19.0, "HTOODAY": 0.0, "HEIGHT": 65.0, "WEIGHT": 160.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 2 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60220", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 50.0, "HTOODAY": 0.0, "HEIGHT": 68.0, "WEIGHT": 216.0, "Reop": 1.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 3 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "yes", "DIABETES": "non-insulin", "SMOKE": "yes", "DYSPNEA": "no", "FNSTATUS2": "unknown", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 52.0, "HTOODAY": 0.0, "HEIGHT": 66.0, "WEIGHT": 319.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 4 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 53.0, "HTOODAY": 0.0, "HEIGHT": 63.0, "WEIGHT": 180.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 5 }, { "SEX": "male", "RACE_NEW": "white", "CPT": "60260", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "non-insulin", "SMOKE": "yes", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 67.0, "HTOODAY": 0.0, "HEIGHT": 69.0, "WEIGHT": 210.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 6 }, { "SEX": "male", "RACE_NEW": "unknown", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 25.0, "HTOODAY": 0.0, "HEIGHT": 72.0, "WEIGHT": 199.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 7 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 26.0, "HTOODAY": 0.0, "HEIGHT": 61.0, "WEIGHT": 198.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 8 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "no", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 72.0, "HTOODAY": 0.0, "HEIGHT": 66.0, "WEIGHT": 198.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 0.0, "id": 9 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "admitted directly from home", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "unknown", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 77.0, "HTOODAY": 0.0, "HEIGHT": 62.0, "WEIGHT": 130.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 10 }, { "SEX": "female", "RACE_NEW": "unknown", "CPT": "60220", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 51.0, "HTOODAY": 0.0, "HEIGHT": 61.0, "WEIGHT": 144.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 11 }, { "SEX": "female", "RACE_NEW": "black or african american", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "unknown", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 39.0, "HTOODAY": 0.0, "HEIGHT": 65.0, "WEIGHT": 171.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 12 }, { "SEX": "female", "RACE_NEW": "unknown", "CPT": "60210", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 71.0, "HTOODAY": 0.0, "HEIGHT": 62.0, "WEIGHT": 167.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 13 }, { "SEX": "female", "RACE_NEW": "asian", "CPT": "60220", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "at rest", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 67.0, "HTOODAY": 0.0, "HEIGHT": 54.0, "WEIGHT": 102.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 14 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "no", "DIABETES": "no", "SMOKE": "yes", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "2-mild disturb", "AGE": 48.0, "HTOODAY": 1.0, "HEIGHT": 63.0, "WEIGHT": 154.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 15 }, { "SEX": "male", "RACE_NEW": "unknown", "CPT": "60210", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "otolaryngology (ent)", "ELECTSURG": "no", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "yes", "HYPERMED": "no", "EMERGNCY": "yes", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 30.0, "HTOODAY": 22.0, "HEIGHT": 70.0, "WEIGHT": 198.0, "Reop": 1.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 16 }, { "SEX": "male", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 53.0, "HTOODAY": 0.0, "HEIGHT": 69.0, "WEIGHT": 177.0, "Reop": 1.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 17 }, { "SEX": "female", "RACE_NEW": "white", "CPT": "60240", "INOUT": "inpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "unknown", "DIABETES": "no", "SMOKE": "no", "DYSPNEA": "no", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "no", "EMERGNCY": "no", "WNDCLAS": "3-contaminated", "ASACLAS": "2-mild disturb", "AGE": 48.0, "HTOODAY": 0.0, "HEIGHT": 68.0, "WEIGHT": 200.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 18 }, { "SEX": "male", "RACE_NEW": "white", "CPT": "60240", "INOUT": "outpatient", "TRANST": "not transferred (admitted from home)", "ANESTHES": "general", "SURGSPEC": "general surgery", "ELECTSURG": "yes", "DIABETES": "non-insulin", "SMOKE": "no", "DYSPNEA": "at rest", "FNSTATUS2": "independent", "VENTILAT": "no", "HYPERMED": "yes", "EMERGNCY": "no", "WNDCLAS": "1-clean", "ASACLAS": "3-severe disturb", "AGE": 76.0, "HTOODAY": 0.0, "HEIGHT": 69.0, "WEIGHT": 230.0, "Reop": 0.0, "Surg_comp": 0.0, "Med_comp": 1.0, "id": 19 }];
@@ -239,8 +300,8 @@
         layout: "fitData", //fit columns to width of table (optional)
         tooltips: true,            //show tool tips on cells
         addRowPos: "top",
-        pagination: "local",       //paginate the data
-        paginationSize: 7,
+        // pagination: "local",       //paginate the data
+        // paginationSize: 7,
         columns:  //Define Table Columns
           [{ title: 'id', field: 'id' },
           { title: 'Med_comp_pred', field: 'Med_comp_pred' },
