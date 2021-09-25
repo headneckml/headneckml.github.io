@@ -34,7 +34,7 @@
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script> 
+    crossorigin="anonymous"></script>
 
   <link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
   <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
@@ -128,10 +128,10 @@
                     </div>
                     <div id="input-table"></div>
 
-                    <br/>
+                    <br />
                     <button class="btn btn-primary get-preds">Get Predictions</button>
-                    <br/>
-                    <br/>
+                    <br />
+                    <br />
                     <div class="alert alert-primary" role="alert">
                       Results will be added to the table in the columns 'Med_comp_pred', 'Surg_comp_pred', and
                       'Reop_pred'. 1 indicates a positive outcome, e.g. Med_comp_pred = 1 means that model has
@@ -217,25 +217,25 @@
 
       $('#testform').jsonForm({
         // "Reop": { "title": "Reop", "type": "number" }, "Surg_comp": { "title": "Surg_comp", "type": "number" }, "Med_comp": { "title": "Med_comp", "type": "number" }
-        "schema": { "SEX": { "title": "SEX", "type": "string", "enum": ["female", "male", "unknown"] }, "RACE_NEW": { "title": "RACE_NEW", "type": "string", "enum": ["american indian or alaska native", "asian", "black or african american", "native hawaiian or pacific islander", "unknown", "white"] }, "CPT": { "title": "CPT", "type": "string", "enum": ["60200", "60210", "60212", "60220", "60225", "60240", "60252", "60254", "60260", "60270", "60271"] }, "INOUT": { "title": "INOUT", "type": "string", "enum": ["inpatient", "outpatient"] }, "TRANST": { "title": "TRANST", "type": "string", "enum": ["acute care hospital", "admitted directly from home", "chronic care facility", "from acute care hospital inpatient", "not transferred (admitted from home)", "nursing home - chronic care - intermediate care", "other", "outside emergency department", "transfer from other", "unknown"] }, "ANESTHES": { "title": "ANESTHES", "type": "string", "enum": ["general"] }, "SURGSPEC": { "title": "SURGSPEC", "type": "string", "enum": ["cardiac surgery", "general surgery", "gynecology", "neurosurgery", "orthopedics", "otolaryngology (ent)", "plastics", "thoracic", "urology", "vascular"] }, "ELECTSURG": { "title": "ELECTSURG", "type": "string", "enum": ["no", "unknown", "yes"] }, "DIABETES": { "title": "DIABETES", "type": "string", "enum": ["insulin", "no", "non-insulin", "oral"] }, "SMOKE": { "title": "SMOKE", "type": "string", "enum": ["no", "yes"] }, "DYSPNEA": { "title": "DYSPNEA", "type": "string", "enum": ["at rest", "moderate exertion", "no"] }, "FNSTATUS2": { "title": "FNSTATUS2", "type": "string", "enum": ["independent", "partially dependent", "totally dependent", "unknown"] }, "VENTILAT": { "title": "VENTILAT", "type": "string", "enum": ["no", "yes"] }, "HYPERMED": { "title": "HYPERMED", "type": "string", "enum": ["no", "yes"] }, "EMERGNCY": { "title": "EMERGNCY", "type": "string", "enum": ["no", "yes"] }, "WNDCLAS": { "title": "WNDCLAS", "type": "string", "enum": ["1-clean", "2-clean/contaminated", "3-contaminated", "4-dirty/infected"] }, "ASACLAS": { "title": "ASACLAS", "type": "string", "enum": ["1-no disturb", "2-mild disturb", "3-severe disturb", "4-life threat", "5-moribund", "none assigned", "unknown"] }, "AGE": { "title": "AGE", "type": "number" }, "HTOODAY": { "title": "HTOODAY", "type": "number" }, "HEIGHT": { "title": "HEIGHT", "type": "number" }, "WEIGHT": { "title": "WEIGHT", "type": "number" } },
+        "schema": { "SEX": { "title": "Gender", "type": "string", "enum": ["female", "male", "unknown"] }, "RACE_NEW": { "title": "New Race", "type": "string", "enum": ["american indian or alaska native", "asian", "black or african american", "native hawaiian or pacific islander", "unknown", "white"] }, "CPT": { "title": "CPT", "type": "string", "enum": ["60200", "60210", "60212", "60220", "60225", "60240", "60252", "60254", "60260", "60270", "60271"] }, "INOUT": { "title": "In/Out-Patient Status", "type": "string", "enum": ["inpatient", "outpatient"] }, "TRANST": { "title": "Transfer status", "type": "string", "enum": ["acute care hospital", "admitted directly from home", "chronic care facility", "from acute care hospital inpatient", "not transferred (admitted from home)", "nursing home - chronic care - intermediate care", "other", "outside emergency department", "transfer from other", "unknown"] }, "ANESTHES": { "title": "Principal Anesthesia Technique", "type": "string", "enum": ["general"] }, "SURGSPEC": { "title": "Surgical Specialty", "type": "string", "enum": ["cardiac surgery", "general surgery", "gynecology", "neurosurgery", "orthopedics", "otolaryngology (ent)", "plastics", "thoracic", "urology", "vascular"] }, "ELECTSURG": { "title": "Elective Surgery", "type": "string", "enum": ["no", "unknown", "yes"] }, "DIABETES": { "title": "Diabetes mellitus with oral agents or insulin", "type": "string", "enum": ["insulin", "no", "non-insulin", "oral"] }, "SMOKE": { "title": "Current smoker within one year", "type": "string", "enum": ["no", "yes"] }, "DYSPNEA": { "title": "Dyspnea", "type": "string", "enum": ["at rest", "moderate exertion", "no"] }, "FNSTATUS2": { "title": "Functional Health Status Prior to Surgery", "type": "string", "enum": ["independent", "partially dependent", "totally dependent", "unknown"] }, "VENTILAT": { "title": "Ventilator Dependent", "type": "string", "enum": ["no", "yes"] }, "HYPERMED": { "title": "Hypertension Requiring Medication", "type": "string", "enum": ["no", "yes"] }, "EMERGNCY": { "title": "Emergency Case", "type": "string", "enum": ["no", "yes"] }, "WNDCLAS": { "title": "Wound Classification", "type": "string", "enum": ["1-clean", "2-clean/contaminated", "3-contaminated", "4-dirty/infected"] }, "ASACLAS": { "title": "ASA Classification", "type": "string", "enum": ["1-no disturb", "2-mild disturb", "3-severe disturb", "4-life threat", "5-moribund", "none assigned", "unknown"] }, "AGE": { "title": "Age", "type": "number" }, "HTOODAY": { "title": "Days from Hospital Admission to Operation", "type": "number" }, "HEIGHT": { "title": "Height (inches)", "type": "number" }, "WEIGHT": { "title": "Weight (lbs)", "type": "number" } },
         "form": [
           {
             name: "Section0",
             id: "section0",
             type: "section",
-            items: ["SEX", 'AGE', "HEIGHT", "WEIGHT", "RACE_NEW", 'DIABETES', "SMOKE"]
+            items: ["SEX", 'AGE', "HEIGHT", "WEIGHT", "RACE_NEW", ]
           },
-          // {
-          //   name: "Section1",
-          //   id: "section1",
-          //   type: "section",
-          //   items: [  ]
-          // },
+          {
+            name: "Section1",
+            id: "section1",
+            type: "section",
+            items: ['DIABETES', "SMOKE", 'DYSPNEA', 'HYPERMED', 'FNSTATUS2'  ]
+          },
           {
             name: "Section2",
             id: "section2",
             type: "section",
-            items: ['DYSPNEA', 'FNSTATUS2', "TRANST", "ELECTSURG", "CPT", 'HTOODAY'],
+            items: [ "TRANST", "ELECTSURG", "CPT", 'HTOODAY'],
           },
 
           {
@@ -248,7 +248,7 @@
             name: "Section4",
             id: "section4",
             type: "section",
-            items: ['VENTILAT', 'HYPERMED', 'WNDCLAS', 'ASACLAS']
+            items: ['VENTILAT', 'WNDCLAS', 'ASACLAS']
           },
           {
             type: 'submit',
@@ -290,7 +290,7 @@
       $("#section3").addClass("row");
       $("#section4").addClass("row");
 
-      $(".form-group").addClass("col-md-3");
+      $(".form-group").addClass("col-md-4");
 
 
 
@@ -310,8 +310,7 @@
           { title: 'Surg_comp_pred', field: 'Surg_comp_pred' },
           { title: 'Reop_pred', field: 'Reop_pred' },
           // {title: 'Med_comp_prediction', field:'Med_comp_prediction', formatter:"color"},
-          { "editor": "select", "title": "SEX", "field": "SEX", "editorParams": { "values": ["female", "male", "unknown"] } }, { "editor": "select", "title": "RACE_NEW", "field": "RACE_NEW", "editorParams": { "values": ["american indian or alaska native", "asian", "black or african american", "native hawaiian or pacific islander", "unknown", "white"] } }, { "editor": "select", "title": "CPT", "field": "CPT", "editorParams": { "values": ["60200", "60210", "60212", "60220", "60225", "60240", "60252", "60254", "60260", "60270", "60271"] } }, { "editor": "select", "title": "INOUT", "field": "INOUT", "editorParams": { "values": ["inpatient", "outpatient"] } }, { "editor": "select", "title": "TRANST", "field": "TRANST", "editorParams": { "values": ["acute care hospital", "admitted directly from home", "chronic care facility", "from acute care hospital inpatient", "not transferred (admitted from home)", "nursing home - chronic care - intermediate care", "other", "outside emergency department", "transfer from other", "unknown"] } }, { "editor": "select", "title": "ANESTHES", "field": "ANESTHES", "editorParams": { "values": ["general"] } }, { "editor": "select", "title": "SURGSPEC", "field": "SURGSPEC", "editorParams": { "values": ["cardiac surgery", "general surgery", "gynecology", "neurosurgery", "orthopedics", "otolaryngology (ent)", "plastics", "thoracic", "urology", "vascular"] } }, { "editor": "select", "title": "ELECTSURG", "field": "ELECTSURG", "editorParams": { "values": ["no", "unknown", "yes"] } }, { "editor": "select", "title": "DIABETES", "field": "DIABETES", "editorParams": { "values": ["insulin", "no", "non-insulin", "oral"] } }, { "editor": "select", "title": "SMOKE", "field": "SMOKE", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "DYSPNEA", "field": "DYSPNEA", "editorParams": { "values": ["at rest", "moderate exertion", "no"] } }, { "editor": "select", "title": "FNSTATUS2", "field": "FNSTATUS2", "editorParams": { "values": ["independent", "partially dependent", "totally dependent", "unknown"] } }, { "editor": "select", "title": "VENTILAT", "field": "VENTILAT", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "HYPERMED", "field": "HYPERMED", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "EMERGNCY", "field": "EMERGNCY", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "WNDCLAS", "field": "WNDCLAS", "editorParams": { "values": ["1-clean", "2-clean/contaminated", "3-contaminated", "4-dirty/infected"] } }, { "editor": "select", "title": "ASACLAS", "field": "ASACLAS", "editorParams": { "values": ["1-no disturb", "2-mild disturb", "3-severe disturb", "4-life threat", "5-moribund", "none assigned", "unknown"] } }, { "title": "AGE", "field": "AGE", "validator": "numeric", "editor": true }, { "title": "HTOODAY", "field": "HTOODAY", "validator": "numeric", "editor": true }, { "title": "HEIGHT", "field": "HEIGHT", "validator": "numeric", "editor": true }, { "title": "WEIGHT", "field": "WEIGHT", "validator": "numeric", "editor": true }, { "title": "Reop", "field": "Reop", "validator": "numeric", "editor": true }, { "title": "Surg_comp", "field": "Surg_comp", "validator": "numeric", "editor": true }, { "title": "Med_comp", "field": "Med_comp", "validator": "numeric", "editor": true }
-
+          { "editor": "select", "title": "Gender", "field": "SEX", "editorParams": { "values": ["female", "male", "unknown"] } }, { "editor": "select", "title": "New Race", "field": "RACE_NEW", "editorParams": { "values": ["american indian or alaska native", "asian", "black or african american", "native hawaiian or pacific islander", "unknown", "white"] } }, { "editor": "select", "title": "CPT", "field": "CPT", "editorParams": { "values": ["60200", "60210", "60212", "60220", "60225", "60240", "60252", "60254", "60260", "60270", "60271"] } }, { "editor": "select", "title": "In/Out-Patient Status", "field": "INOUT", "editorParams": { "values": ["inpatient", "outpatient"] } }, { "editor": "select", "title": "Transfer status", "field": "TRANST", "editorParams": { "values": ["acute care hospital", "admitted directly from home", "chronic care facility", "from acute care hospital inpatient", "not transferred (admitted from home)", "nursing home - chronic care - intermediate care", "other", "outside emergency department", "transfer from other", "unknown"] } }, { "editor": "select", "title": "Principal Anesthesia Technique", "field": "ANESTHES", "editorParams": { "values": ["general"] } }, { "editor": "select", "title": "Surgical Specialty", "field": "SURGSPEC", "editorParams": { "values": ["cardiac surgery", "general surgery", "gynecology", "neurosurgery", "orthopedics", "otolaryngology (ent)", "plastics", "thoracic", "urology", "vascular"] } }, { "editor": "select", "title": "Elective Surgery", "field": "ELECTSURG", "editorParams": { "values": ["no", "unknown", "yes"] } }, { "editor": "select", "title": "Diabetes mellitus with oral agents or insulin", "field": "DIABETES", "editorParams": { "values": ["insulin", "no", "non-insulin", "oral"] } }, { "editor": "select", "title": "Current smoker within one year", "field": "SMOKE", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "Dyspnea", "field": "DYSPNEA", "editorParams": { "values": ["at rest", "moderate exertion", "no"] } }, { "editor": "select", "title": "Functional Health Status Prior to Surgery", "field": "FNSTATUS2", "editorParams": { "values": ["independent", "partially dependent", "totally dependent", "unknown"] } }, { "editor": "select", "title": "Ventilator Dependent", "field": "VENTILAT", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "Hypertension Requiring Medication", "field": "HYPERMED", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "Emergency Case", "field": "EMERGNCY", "editorParams": { "values": ["no", "yes"] } }, { "editor": "select", "title": "Wound Classification", "field": "WNDCLAS", "editorParams": { "values": ["1-clean", "2-clean/contaminated", "3-contaminated", "4-dirty/infected"] } }, { "editor": "select", "title": "ASA Classification", "field": "ASACLAS", "editorParams": { "values": ["1-no disturb", "2-mild disturb", "3-severe disturb", "4-life threat", "5-moribund", "none assigned", "unknown"] } }, { "title": "Age", "field": "AGE", "validator": "numeric", "editor": true }, { "title": "Days from Hospital Admission to Operation", "field": "HTOODAY", "validator": "numeric", "editor": true }, { "title": "Height (inches)", "field": "HEIGHT", "validator": "numeric", "editor": true }, { "title": "Weight (lbs)", "field": "WEIGHT", "validator": "numeric", "editor": true }, { "title": "Reoperation", "field": "Reop", "validator": "numeric", "editor": true }, { "title": "Surgical Complication", "field": "Surg_comp", "validator": "numeric", "editor": true }, { "title": "Medical Complication", "field": "Med_comp", "validator": "numeric", "editor": true }
           ]
 
       });
